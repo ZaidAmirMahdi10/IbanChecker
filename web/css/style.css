@@ -1,0 +1,40 @@
+#wrapper{
+	width: 980px;
+	margin: 50px auto;
+	padding: 20px;
+	background: #EFFFE0;
+}
+form{
+	width: 50%;
+	margin: 100px auto;
+
+}
+form div{
+	margin: 3px auto;
+}
+.textInput{
+	margin-top: 2px;
+	height: 28px;
+	border: 1px solid #5E6E66;
+	font-size: 16px;
+	padding: 1px;
+	width: 100%auto;
+	width:39px;
+}
+.btn{
+	background-color: #4CAF50;
+	color: white;
+	padding: 7px;
+	width: 90%;
+	display: inline-block;
+	border: none;
+	text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.val_error{
+	color: #FF1F1F;
+}
+
+
