@@ -45,36 +45,6 @@ function checkibancore(iban) {
 function checkiban(iban) {
 	if (checkibancore(iban) == "1") { alert('IBAN Is Correct'); } // and prompt result
 	else { alert('IBAN Is Wrong'); }}
-function buildtest(structure,kind) {
-	var result = "";
-	var testpattern = structure.match(/([ABCFLUW]\d{2})/g);
-	var patterncount = testpattern.length;
-	for (var i = 0; i < patterncount; ++i) {
-		if (((kind >= 0)&&(i != kind))||(kind == -2)) {
-			result += testpart(testpattern[i],"any"); }
-		else {result += testpart(testpattern[i],"standard"); }}
-	return new RegExp(result); }
-function testpart(pattern,kind) {
-	var testpattern = "(";
-	if (kind == "any") {
-		testpattern += "."; }
-	else {
-		testpattern += "[";
-		if (kind == "reverse") {
-			testpattern += "^"; }
-		switch (pattern.substr(0,1)) {
-			case "A": testpattern += "0-9A-Za-z"; break;
-			case "B": testpattern += "0-9A-Z"; break;
-			case "C": testpattern += "A-Za-z"; break;
-			case "F": testpattern += "0-9"; break;
-			case "L": testpattern += "a-z"; break;
-			case "U": testpattern += "A-Z"; break;
-			case "W": testpattern += "0-9a-z"; break; }
-		testpattern += "]"; }
-	if (((pattern.substr(1,2)*1) > 1) && (kind != "reverse")) {
-		testpattern += "{"+String(pattern.substr(1,2)*1)+"}"; }
-	testpattern += ")";
-	return testpattern; }
 
 
 
